@@ -17,6 +17,11 @@ menu "Example Configuration"
             bool "SPI interface"
             help
                 Enable/Disable SPI host interface
+
+        config ESP_SHMEM_HOST_INTERFACE
+            bool "Shared memory interface"
+            help
+                Enable/Disable shared memory host interface
     endchoice
 
     menu "SPI Configuration"
@@ -58,6 +63,23 @@ menu "Example Configuration"
         default n
         help
             ENABLE/DISABLE software SDIO checksum
+
+    endmenu
+
+    menu "Shared memory configuration"
+        depends on ESP_SHMEM_HOST_INTERFACE
+
+    config ESP_SHMEM_IRQ_TO_HOST_IDX
+        int "Software IRQ to host index"
+        default 2
+        help
+            Index in SYSTEM_CPU_INTR_FROM_CPU_*
+
+    config ESP_SHMEM_IRQ_FROM_HOST_IDX
+        int "Software IRQ from host index"
+        default 3
+        help
+            Index in SYSTEM_CPU_INTR_FROM_CPU_*
 
     endmenu
 

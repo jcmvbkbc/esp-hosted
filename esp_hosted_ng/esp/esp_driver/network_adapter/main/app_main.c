@@ -630,7 +630,7 @@ void app_main()
 #endif
 
 	if_context = interface_insert_driver(event_handler);
-#if CONFIG_ESP_SPI_HOST_INTERFACE
+#if CONFIG_ESP_SPI_HOST_INTERFACE || CONFIG_ESP_SHMEM_HOST_INTERFACE
 	datapath = 1;
 #endif
 

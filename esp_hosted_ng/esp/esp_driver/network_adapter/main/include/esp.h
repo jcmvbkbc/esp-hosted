@@ -34,6 +34,9 @@
 #elif defined CONFIG_ESP_SPI_HOST_INTERFACE
   #define RX_BUF_SIZE              1600
 
+#elif defined CONFIG_ESP_SHMEM_HOST_INTERFACE
+  #define RX_BUF_SIZE              1600
+
 #else
   #error "Undefined transport"
 #endif

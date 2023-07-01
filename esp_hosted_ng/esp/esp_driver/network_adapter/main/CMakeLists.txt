@@ -3,8 +3,10 @@ set(COMPONENT_ADD_INCLUDEDIRS "./include")
 
 if(CONFIG_ESP_SDIO_HOST_INTERFACE)
     list(APPEND COMPONENT_SRCS sdio_slave_api.c)
-else(CONFIG_ESP_SPI_HOST_INTERFACE)
+elseif(CONFIG_ESP_SPI_HOST_INTERFACE)
     list(APPEND COMPONENT_SRCS spi_slave_api.c)
+elseif(CONFIG_ESP_SHMEM_HOST_INTERFACE)
+    list(APPEND COMPONENT_SRCS shmem_slave_api.c)
 endif()
 
 
