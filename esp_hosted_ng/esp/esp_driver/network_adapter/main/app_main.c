@@ -667,4 +667,7 @@ void app_main()
 	tcpip_adapter_init();
 
 	ESP_LOGI(TAG,"Initial set up done");
+
+	void linux_boot(void);
+	linux_boot();
 }

@@ -1,4 +1,4 @@
-set(COMPONENT_SRCS "app_main.c" "slave_bt.c" "cmd.c" "stats.c")
+set(COMPONENT_SRCS "app_main.c" "slave_bt.c" "cmd.c" "stats.c" "linux_boot.c")
 set(COMPONENT_ADD_INCLUDEDIRS "./include")
 
 if(CONFIG_ESP_SDIO_HOST_INTERFACE)
